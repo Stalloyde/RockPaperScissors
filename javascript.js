@@ -40,7 +40,7 @@ function playRound (userInput, computerMove) {
         USER WINS!
             
         SCOREBOARD:
-        User: ${userScore}, Computer: ${computerScore}`;
+        User: ${userScore}, Computer: ${computerScore}`; 
     
 } else if 
     
@@ -61,10 +61,10 @@ function playRound (userInput, computerMove) {
 }
 
 //assigned action to parameters of computerInput and userInput in function playRound here so that entire program runs from scratch each loop
-function game () {
+ function game () {
     for (let i=1; i < 6; i++) {
     const computerMove = getComputerMove();
-    const userInput = prompt('Rock, paper or scissors?').toLowerCase();
+    const userInput = ('Rock, paper or scissors?').toLowerCase();
     console.log(playRound(userInput, computerMove));
     }
 }

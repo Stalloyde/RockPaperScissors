@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.container{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.pc-section, .user-section {
+    text-align: center;
+}
+
+.result-section {
+    flex-grow: 1;
+    text-align: center;
+    margin: 100px;
+} 
+
+.result-items{
+    display:flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+#scoreboard{
+    color:black;
+}
+
+.btn {
+    flex:auto;
+    margin: 20px;
+    background-color: white;
+    font-size: x-large;
+}
+
