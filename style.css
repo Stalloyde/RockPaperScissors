@@ -41,10 +41,14 @@ h1 {
     min-width: 700px;
 } 
 
-.user-input, .round-result, .computer-input {
+.user-input-container, .round-result-container, .computer-input-container {
     flex: auto;
     padding: 20px;
     ;
+}
+
+.user-input, .round-result, .computer-input {
+    height: 340px;
 }
 
 .user-btn, .pc-btn {
