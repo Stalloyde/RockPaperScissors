@@ -4,35 +4,42 @@
     <meta charset = "utf-8">
     <title>Rock Paper Scissors JS</title>
     <link rel ="stylesheet" href = "style.css"> 
-    <script src="javascript.js"></script>    
+    <script src="javascript.js" defer></script>    
 </head>
 <body>
+    <h1> Rock, Paper, Scissors </h1>
     <div class = "container">
         <div class ="user-section">
-            <h2>Rock, paper or scissors?</h2>
-            <button class = "btn"> <img src = "rps-rock.png" height="200" width="200"></button>
+            <h2> Select Your Weapon </h2>
+            <img id = "btn-rock" class = "user-btn" src = "rps-rock.png" height="200" width="200">
             <br>
-            <button class = "btn"> <img src = "rps-paper.png" height="200" width="200"></button>
+            <img id = "btn-paper" class = "user-btn" src = "rps-paper.png" height="200" width="200">
             <br>
-            <button class = "btn"> <img src = "rps-scissors.png" height="200" width="200"></button>
+            <img id = "btn-scissors" class = "user-btn" src = "rps-scissors.png" height="200" width="200">
         </div>
         
-        <div class = "result-section">
-            <h2>result section</h2>
-            <div class = "result-items">
-                <div id ="round-result">round result</div>
-                <div id ="scoreboard">scoreboard</div>
+        <div class = "result-container">
+            <div class = "inputs">
+                <div class = "user-input"> <strong>You chose:</strong> </div>
+                <div class = "round-result"> </div>
+                <div class = "computer-input"> <strong>Computer chose:</strong></div> 
+            </div>
+            
+            <div class = "scoreboard-container">
+                <div class = scoreboard-user> 0 </div>
+                <strong>SCOREBOARD</strong>
+                <div class = scoreboard-computer> 0 </div>
             </div>
         </div>
         
         <div class = "pc-section">
-            <h2>pc section</h2>
-            <button class = "btn"> <img src = "rps-rock.png" height="200" width="200"></button>
+            <h2> PC Selects </h2>
+            <img class = "pc-btn" src = "rps-rock.png" height="200" width="200">
             <br>
-            <button class = "btn"> <img src = "rps-paper.png" height="200" width="200"></button>
+            <img class = "pc-btn" src = "rps-paper.png" height="200" width="200">
             <br>
-            <button class = "btn"> <img src = "rps-scissors.png" height="200" width="200"></button>
+            <img class = "pc-btn" src = "rps-scissors.png" height="200" width="200">
         </div>
-</div>
+    </div>
 </body>
 </html>
