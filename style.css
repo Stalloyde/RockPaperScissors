@@ -2,16 +2,14 @@
     box-sizing: border-box;
 }
 
-h1 {
+header {
     text-align: center;
     padding: 10px;
 }
 
 .container{
     display: flex;
-    margin: 20px;
-    padding: 20px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .pc-section, .user-section {
@@ -22,6 +20,7 @@ h1 {
     border: 1px solid yellow;
     margin: 150px;
     text-align: center;
+    font-size: large;
 }
 
 .scoreboard-container{
@@ -30,12 +29,13 @@ h1 {
     align-items: center;
     height: 100px;
     border: 1px solid red;
+    font-size: xx-large;
 }
 
 .inputs {
     display: flex;
-    flex-grow: 1;
     text-align: center;
+    align-items: center;
     border: 1px solid black;
     min-height: 400px;
     min-width: 700px;
@@ -44,16 +44,10 @@ h1 {
 .user-input-container, .round-result-container, .computer-input-container {
     flex: auto;
     padding: 20px;
-    ;
-}
-
-.user-input, .round-result, .computer-input {
-    height: 340px;
 }
 
 .user-btn, .pc-btn {
     flex:auto;
     margin: 20px;
-    font-size: x-large;
 }
 

@@ -19,10 +19,13 @@ function getComputerMove() {
 const btnRock = document.querySelector("#btn-rock");
 const btnPaper = document.querySelector("#btn-paper");
 const btnScissors = document.querySelector("#btn-scissors");
-btnRock.addEventListener("click", function () {displayInputs("Rock")});
-btnPaper.addEventListener("click", function () {displayInputs("Paper")});
-btnScissors.addEventListener("click", function () {displayInputs("Scissors")});
+btnRock.addEventListener("click", getRock);
+btnPaper.addEventListener("click", getPaper);
+btnScissors.addEventListener("click", getScissors);
 
+function getRock () {displayInputs("Rock")};
+function getPaper () {displayInputs("Paper")};
+function getScissors () {displayInputs("Scissors")};
 
 function displayInputs (userInput) {
 
@@ -30,11 +33,13 @@ function displayInputs (userInput) {
         const userSelection = document.querySelector(".user-input");
         const computerSelection = document.querySelector(".computer-input");
         const roundResult = document.querySelector(".round-result");
+        const gameRestart = document.querySelector(".game-restart");
         const userScoreboard = document.querySelector(".scoreboard-user");
         const computerScoreboard = document.querySelector(".scoreboard-computer");
         userSelection.textContent = userInput;
         computerSelection.textContent = computerMove;
         roundResult.textContent = "";
+        gameRestart.textContent = "";
         userScoreboard.textContent = "";
         computerScoreboard.textContent = "";
         
@@ -66,11 +71,24 @@ function displayInputs (userInput) {
             userScoreboard.textContent = `${userScore}`;
             computerScoreboard.textContent = `${computerScore}`;
             }     
+        
+    if ((userScore === 5 ) && (userScore > computerScore)) {
+        roundResult.textContent = `YOU BEAT THE GAME!` 
+        gameRestart.textContent = `REFRESH PAGE TO PLAY AGAIN!`    
+        userScoreboard.textContent = `${userScore}`;
+        computerScoreboard.textContent = `${computerScore}`;
+        btnRock.removeEventListener("click", getRock);
+        btnPaper.removeEventListener("click", getPaper);
+        btnScissors.removeEventListener("click", getScissors);
+        
+    } else if 
+        ((computerScore ===5) && (computerScore > userScore)) {
+        roundResult.textContent = `THE COMPUTER WHOOOOPED YOU!` 
+        gameRestart.textContent = `REFRESH PAGE TO TRY AGAIN!`
+        userScoreboard.textContent = `${userScore}`;
+        computerScoreboard.textContent = `${computerScore}`;
+        btnRock.removeEventListener("click", getRock);
+        btnPaper.removeEventListener("click", getPaper);
+        btnScissors.removeEventListener("click", getScissors);
         }
-
-if ((userScore === 5) || (computerScore === 5)) {
-    btnRock.removeEventListener("click", function () {displayInputs("Rock")});
-    btnPaper.removeEventListener("click", function () {displayInputs("Paper")});
-    btnScissors.removeEventListener("click", function () {displayInputs("Scissors")});
-    }
-    
+}
