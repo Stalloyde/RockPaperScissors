@@ -8,4 +8,3 @@ A few crucial lessons learnt from this project:
 1) Deeper understanding of how HTML, CSS and JS integrates with one another to deliver a website.
 2) How to add/remove event listeners and including the appearance of images for said event listeners.
 3) Deeper understanding of Flexbox and how divs can be structured in the HTML file to the layout that's required.
-4)
