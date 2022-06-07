@@ -22,8 +22,6 @@ const btnScissors = document.querySelector("#btn-scissors");
 btnRock.addEventListener("click", getRock);
 btnPaper.addEventListener("click", getPaper);
 btnScissors.addEventListener("click", getScissors);
-///can add mutiple addeventlisterns to each button. need to write function that displays image. callback functions in the eventlisteners. 
-//remove userSelection and computerSelection.textContent
 
 function getRock () {displayInputs("Rock")};
 function getPaper () {displayInputs("Paper")};
