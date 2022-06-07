@@ -13,7 +13,7 @@ function getComputerMove() {
         } else if
     (randomNumber === 2) {
         return 'Scissors';
-        }
+        }   
     }
 
 const btnRock = document.querySelector("#btn-rock");
@@ -22,6 +22,8 @@ const btnScissors = document.querySelector("#btn-scissors");
 btnRock.addEventListener("click", getRock);
 btnPaper.addEventListener("click", getPaper);
 btnScissors.addEventListener("click", getScissors);
+///can add mutiple addeventlisterns to each button. need to write function that displays image. callback functions in the eventlisteners. 
+//remove userSelection and computerSelection.textContent
 
 function getRock () {displayInputs("Rock")};
 function getPaper () {displayInputs("Paper")};
@@ -33,48 +35,76 @@ function displayInputs (userInput) {
         const userSelection = document.querySelector(".user-input");
         const computerSelection = document.querySelector(".computer-input");
         const roundResult = document.querySelector(".round-result");
-        const gameRestart = document.querySelector(".game-restart");
+        const roundResult2 = document.querySelector(".round-result2");
         const userScoreboard = document.querySelector(".scoreboard-user");
         const computerScoreboard = document.querySelector(".scoreboard-computer");
-        userSelection.textContent = userInput;
-        computerSelection.textContent = computerMove;
+
+        userSelection.innerHTML = getUserSelectionImage();
+        computerSelection.innerHTML = getComputerSelectionImage();       
         roundResult.textContent = "";
-        gameRestart.textContent = "";
+        roundResult2.textContent = "";
         userScoreboard.textContent = "";
         computerScoreboard.textContent = "";
-        
-        if (computerMove === userInput) {
-            roundResult.textContent = `IT'S A TIE!`
-            userScoreboard.textContent = `${userScore}`;
-            computerScoreboard.textContent = `${computerScore}`;
-        
-            } else if
-        
-        ((userInput === 'Rock' && computerMove === 'Scissors') || 
-        (userInput === 'Scissors' && computerMove === 'Paper') || 
-        (userInput === 'Paper' && computerMove === 'Rock')) {
-            
-            userScore++;
+
+    function getUserSelectionImage () {
+        if (userInput === "Rock") {
+            return "<img src=rps-rock.png width = 180 height = 180>";
+        } else if
+        (userInput === "Paper") {
+            return "<img src=rps-paper.png width = 180 height = 180>";
+        } else if
+        (userInput === "Scissors") {
+            return "<img src=rps-scissors.png width = 180 height = 180>";
+        }
+    }
     
-            roundResult.textContent =  `YOU WIN!`
-            userScoreboard.textContent = `${userScore}`;
-            computerScoreboard.textContent = `${computerScore}`;
-            } else if 
-        
-        ((computerMove === 'Rock' && userInput === 'Scissors') || 
-        (computerMove === 'Scissors' && userInput === 'Paper') || 
-        (computerMove === 'Paper' && userInput === 'Rock')) {
-        
-            computerScore++;
     
-            roundResult.textContent = `COMPUTER WINS!`    
-            userScoreboard.textContent = `${userScore}`;
-            computerScoreboard.textContent = `${computerScore}`;
-            }     
+    function getComputerSelectionImage () {
+        if (computerMove === "Rock") {
+            return "<img src=rps-rock.png width = 180 height = 180>";
+        } else if
+        (computerMove === "Paper") {
+            return "<img src=rps-paper.png width = 180 height = 180>";
+        } else if
+        (computerMove === "Scissors") {
+            return "<img src=rps-scissors.png width = 180 height = 180>";
+        }
+    }
+    
+    if (computerMove === userInput) {
+        roundResult.textContent = `Tie round!`
+        userScoreboard.textContent = `${userScore}`;
+        computerScoreboard.textContent = `${computerScore}`;
+    
+        } else if
+    
+    ((userInput === 'Rock' && computerMove === 'Scissors') || 
+    (userInput === 'Scissors' && computerMove === 'Paper') || 
+    (userInput === 'Paper' && computerMove === 'Rock')) {
+        
+        userScore++;
+
+        roundResult.textContent =  `${userInput} beats ${computerMove}.`
+        roundResult2.textContent = `You won the round!`
+        userScoreboard.textContent = `${userScore}`;
+        computerScoreboard.textContent = `${computerScore}`;
+        } else if 
+    
+    ((computerMove === 'Rock' && userInput === 'Scissors') || 
+    (computerMove === 'Scissors' && userInput === 'Paper') || 
+    (computerMove === 'Paper' && userInput === 'Rock')) {
+    
+        computerScore++;
+
+        roundResult.textContent = `${computerMove} beats ${userInput}.` 
+        roundResult2.textContent = `Computer won the rond!`    
+        userScoreboard.textContent = `${userScore}`;
+        computerScoreboard.textContent = `${computerScore}`;
+        }     
         
     if ((userScore === 5 ) && (userScore > computerScore)) {
-        roundResult.textContent = `YOU BEAT THE GAME!` 
-        gameRestart.textContent = `REFRESH PAGE TO PLAY AGAIN!`    
+        roundResult.textContent = `You beat the game!` 
+        roundResult2.textContent = `Refresh game to play again!`    
         userScoreboard.textContent = `${userScore}`;
         computerScoreboard.textContent = `${computerScore}`;
         btnRock.removeEventListener("click", getRock);
@@ -83,12 +113,14 @@ function displayInputs (userInput) {
         
     } else if 
         ((computerScore ===5) && (computerScore > userScore)) {
-        roundResult.textContent = `THE COMPUTER WHOOOOPED YOU!` 
-        gameRestart.textContent = `REFRESH PAGE TO TRY AGAIN!`
+        roundResult.textContent = `You got whooped!` 
+        roundResult2.textContent = `Refresh page to try again!`
         userScoreboard.textContent = `${userScore}`;
         computerScoreboard.textContent = `${computerScore}`;
         btnRock.removeEventListener("click", getRock);
         btnPaper.removeEventListener("click", getPaper);
         btnScissors.removeEventListener("click", getScissors);
         }
+        
 }
+
