@@ -102,7 +102,7 @@ function displayInputs (userInput) {
         
     if ((userScore === 5 ) && (userScore > computerScore)) {
         roundResult.textContent = `You beat the game!` 
-        roundResult2.textContent = `Refresh game to play again!`    
+        roundResult2.textContent = `Refresh page to play again!`    
         userScoreboard.textContent = `${userScore}`;
         computerScoreboard.textContent = `${computerScore}`;
         btnRock.removeEventListener("click", getRock);
