@@ -12,6 +12,7 @@ header {
     display: flex;
     width: 100vw;
     justify-content: center;
+    align-items: center;
 }
 
 .pc-section, .user-section {
@@ -21,6 +22,7 @@ header {
 }
 
 .result-container{
+    align-content: center;
     margin: 150px;
     text-align: center;
     font-size: large;
@@ -48,6 +50,7 @@ header {
 .user-input-container, .round-result-container, .computer-input-container {
     flex: auto;
     padding: 20px;
+    width: 10vw;
 }
 
 .user-btn, .pc-btn {

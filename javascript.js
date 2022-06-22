@@ -46,26 +46,26 @@ function displayInputs (userInput) {
 
     function getUserSelectionImage () {
         if (userInput === "Rock") {
-            return "<img src=rps-rock.png width = 150vw height = 180vw>";
+            return "<img src=rps-rock.png width = 100vw height = 100vw>";
         } else if
         (userInput === "Paper") {
-            return "<img src=rps-paper.png width = 150vw height = 180vw>";
+            return "<img src=rps-paper.png width = 100vw height = 100vw>";
         } else if
         (userInput === "Scissors") {
-            return "<img src=rps-scissors.png width = 150vw height = 150vh>";
+            return "<img src=rps-scissors.png width = 100vw height = 100vh>";
         }
     }
     
     
     function getComputerSelectionImage () {
         if (computerMove === "Rock") {
-            return "<img src=rps-rock.png width = 150vw height = 150vh>";
+            return "<img src=rps-rock.png width = 100vw height = 100vh>";
         } else if
         (computerMove === "Paper") {
-            return "<img src=rps-paper.png width = 150vw height = 150vh>";
+            return "<img src=rps-paper.png width = 100vw height = 100vh>";
         } else if
         (computerMove === "Scissors") {
-            return "<img src=rps-scissors.png width = 150vw height = 150vh>";
+            return "<img src=rps-scissors.png width = 100vw height = 100vh>";
         }
     }
     
